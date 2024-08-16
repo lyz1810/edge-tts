@@ -1,5 +1,6 @@
-flask
+flask==3.0.2
+flask-cors
 cos-python-sdk-v5
-gunicorn
-gevent
-edge-tts
+gunicorn==21.2.0
+gevent==24.2.1
+edge-tts==6.1.10

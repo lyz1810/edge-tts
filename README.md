@@ -1,7 +1,7 @@
 
 ## 系统说明
 
-- 基于 微软开源的TTS语音库 文字转语音，文字转mp3
+- 基于 微软edge的在线语音合成服务，实现文字转语音
 - 代码采用 flask+ edge-tts +python3.9+gunicorn + cos 直接可以运行在docker项目中,接口根据文字、主播 生成语音并上传到腾讯云COS云存储
 
 
@@ -21,15 +21,9 @@ pip install  -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 python3 edge-tts.py
 
 #浏览器接口访问
-http://localhost:2022/dealAudio?text=欢迎使用tts&file_name=1.mp3&voice=xiaoxiao
+http://127.0.0.1:2020/dealAudio?text=欢迎使用tts&file_name=1.mp3&voice=xiaoxiao
 
 ```
-
-
-
-静待音频生成之后就可以听到 "网红晓晓" 的声音了，tts支持的语音有很多
-本项目只是用了中文发音的主播，如：晓晓、云希、云杨等都是抖音里的常用网红主播...
-
 
 
 ### 服务器部署
@@ -64,3 +58,23 @@ Successfully tagged python_tts:latest
 #docker服务创建完成 通过外网接口调用即可
 
 ```
+
+
+静待音频生成之后就可以听到 "网红晓晓" 的声音了，tts支持的语音有很多
+本项目只是用了中文发音的主播，如：晓晓、云希、云杨等都是抖音里的常用网红主播...
+
+
+```
+#查看和扩展的声音
+edge-tts --list-voices
+```
+
+
+
+#### 扩展-数字人开口说话
+
+- 搭配live2d数字人模型，配合音频生成实现开口说话 [live2dSpeek](https://github.com/lyz1810/live2dSpeek)
+
+
+
+
