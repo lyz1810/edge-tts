@@ -3,4 +3,4 @@ flask-cors
 cos-python-sdk-v5
 gunicorn==21.2.0
 gevent==24.2.1
-edge-tts
+edge-tts==6.1.18
